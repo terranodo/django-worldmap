@@ -1093,14 +1093,14 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
             if (isLocal) {
                 //Get all the required WMS parameters from the GeoNode/Worldmap database
                 // instead of GetCapabilities
-                var layer = records[i].get("name");
+                var layer = records[i].get("title");
                 var tiled = records[i].get("tiled");
 
 
                 Ext.Ajax.request({
-                    url: "/maps/addgeonodelayer/?" + thisRecord.get("name"),
+                    url: "/worldmap/addgeonodelayer/geonode:" + thisRecord.get("title"),
                     method: "POST",
-                    params: {layername:thisRecord.get("name")},
+                    params: {layername:thisRecord.get("title")},
 
                     success: function(result, request) {
                         var jsonData = Ext.util.JSON.decode(result.responseText);
