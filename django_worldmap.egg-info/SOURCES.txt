@@ -1,7 +1,0 @@
-django_worldmap.egg-info/PKG-INFO
-django_worldmap.egg-info/SOURCES.txt
-django_worldmap.egg-info/dependency_links.txt
-django_worldmap.egg-info/not-zip-safe
-django_worldmap.egg-info/pbr.json
-django_worldmap.egg-info/top_level.txt
-worldmap/__init__.py
