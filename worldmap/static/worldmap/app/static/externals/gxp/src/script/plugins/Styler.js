@@ -206,7 +206,7 @@ gxp.plugins.Styler = Ext.extend(gxp.plugins.Tool, {
     enableEditingIfAuthorized: function(layerRec, url) {
         Ext.Ajax.request({
             method: "PUT",
-            url:"/data/" + layerRec.getLayer().params.LAYERS + "/ajax-edit-check",
+            url:"/gs/" + layerRec.getLayer().params.LAYERS + "/edit-check",
             callback: function(options, success, response) {
                 this.editable = (response.status == 200);
                 this.launchAction.enable();
