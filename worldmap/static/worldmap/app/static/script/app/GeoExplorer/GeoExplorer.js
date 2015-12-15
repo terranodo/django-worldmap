@@ -259,23 +259,23 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
                 // use django's /geoserver endpoint when talking to the local
                 // GeoServer's RESTconfig API
                 var url = options.url.replace(this.urlPortRegEx, "$1/");
-                if (this.localGeoServerBaseUrl) {
-                    if (url.indexOf(this.localGeoServerBaseUrl) == 0) {
-                        // replace local GeoServer url with /geoserver/
-                        options.url = url.replace(
-                            new RegExp("^" + this.localGeoServerBaseUrl),
-                            "/geoserver/"
-                        );
-                        return;
-                    }
-                    var localUrl = this.localGeoServerBaseUrl.replace(
-                        this.urlPortRegEx, "$1/");
-                    if (url.indexOf(localUrl + "rest/") === 0) {
-                        options.url = url.replace(new RegExp("^" +
-                            localUrl), "/geoserver/");
-                        return;
-                    }
-                }
+                // if (this.localGeoServerBaseUrl) {
+                //     if (url.indexOf(this.localGeoServerBaseUrl) == 0) {
+                //         // replace local GeoServer url with /geoserver/
+                //         options.url = url.replace(
+                //             new RegExp("^" + this.localGeoServerBaseUrl),
+                //             "/geoserver/"
+                //         );
+                //         return;
+                //     }
+                //     var localUrl = this.localGeoServerBaseUrl.replace(
+                //         this.urlPortRegEx, "$1/");
+                //     if (url.indexOf(localUrl + "rest/") === 0) {
+                //         options.url = url.replace(new RegExp("^" +
+                //             localUrl), "/geoserver/");
+                //         return;
+                //     }
+                // }
                 // use the proxy for all non-local requests
                 if(this.proxy && options.url.indexOf(this.proxy) !== 0 &&
                     options.url.indexOf("http") === 0) {
@@ -569,7 +569,7 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
             var layer = layerRecord.getLayer();
             if (this.layerSources[layerRecord.get("source")] instanceof gxp.plugins.GeoNodeSource) {
                 Ext.Ajax.request({
-                    url:"/data/" + layer.params.LAYERS + "/ajax-edit-check",
+                    url:"/gs/" + layer.params.LAYERS + "/edit-check",
                     method:"POST",
                     success:function (result, request) {
                         if (result.status != 200) {
@@ -746,7 +746,7 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
 
         var incrementLayerStats = function(layer) {
             Ext.Ajax.request({
-                url: "/data/layerstats/",
+                url: "/worldmap/layerstats/",
                 method: "POST",
                 params: {layername:layer.params.LAYERS}
             });
