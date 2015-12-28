@@ -2045,7 +2045,7 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
             id: 'worldmap_update_panel',
             title: this.uploadLayerText,
             header: false,
-            autoLoad: {url: '/data/upload/?tab=true', scripts: true},
+            autoLoad: {url: '/worldmap/upload/?tab=true', scripts: true},
             listeners:{
                 activate : function(panel) {
                     panel.getUpdater().refresh();
@@ -2062,7 +2062,7 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
             id: 'worldmap_create_panel',
             title: this.createLayerText,
             header: false,
-            autoLoad: {url: '/data/create_pg_layer/?tab=true', scripts: true},
+            autoLoad: {url: '/worldmap/create_pg_layer/?tab=true', scripts: true},
             listeners:{
                 activate : function(panel) {
                     panel.getUpdater().refresh();
