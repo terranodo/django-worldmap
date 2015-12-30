@@ -1098,9 +1098,9 @@ var GeoExplorer = Ext.extend(gxp.Viewer, {
 
 
                 Ext.Ajax.request({
-                    url: "/worldmap/addgeonodelayer/geonode:" + thisRecord.get("title"),
+                    url: "/worldmap/addgeonodelayer/" + thisRecord.get("detail_url").split('/')[2],
                     method: "POST",
-                    params: {layername:thisRecord.get("title")},
+                    params: {layername:thisRecord.get("detail_url").split('/')[2]},
 
                     success: function(result, request) {
                         var jsonData = Ext.util.JSON.decode(result.responseText);
