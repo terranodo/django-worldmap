@@ -51,7 +51,13 @@ gxp.NewSourceDialog = Ext.extend(Ext.Panel, {
      *  Text for ArcGIS REST radio-button(i18n).
      */
     addArcText: "ArcGIS REST",
-    
+   
+    /** api: config[wmtsText]
+     *  ``String``
+     *  Text for WMTS radio-button(i18n).
+     */
+    addWMTSText: "WMTS",
+ 
     /** api: config[invalidURLText]
      *  ``String``
      *  Message to display when an invalid URL is entered (i18n).
@@ -99,7 +105,8 @@ gxp.NewSourceDialog = Ext.extend(Ext.Panel, {
             columns: [50, 190],
             items: [
                 {name: 'source_type', inputValue: 'gxp_wmscsource', boxLabel: this.addWMSText, checked: true},
-                {name: 'source_type', inputValue: 'gxp_arcrestsource', boxLabel: this.addArcText}
+                {name: 'source_type', inputValue: 'gxp_arcrestsource', boxLabel: this.addArcText},
+                {name: 'source_type', inputValue: 'gxp_wmtssource', boxLabel: this.addWMTSText}
             ]
         });
 
