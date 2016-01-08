@@ -17,7 +17,7 @@ Ext.ns('gxp.data', 'gxp.plugins');
 
 /** api: (define)
  *  module = gxp.plugins
- *  class = TMSSource
+ *  class = WTMSSource
  */
 
 /** api: (extends)
