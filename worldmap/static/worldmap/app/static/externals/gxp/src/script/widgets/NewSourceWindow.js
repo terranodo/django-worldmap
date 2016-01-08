@@ -50,6 +50,12 @@ gxp.NewSourceWindow = Ext.extend(Ext.Window, {
      */
     addArcText: "ArcGIS REST",
 
+    /** api: config[wmtsText]
+     *  ``String``
+     *  Text for WMS radio-button(i18n).
+     */
+    addWMTSText: "WMTS",
+
     /** api: config[invalidURLText]
      *  ``String``
      *  Message to display when an invalid URL is entered (i18n).
@@ -104,7 +110,8 @@ gxp.NewSourceWindow = Ext.extend(Ext.Window, {
             columns: [50, 190],
             items: [
                 {name: 'source_type', inputValue: 'gxp_wmscsource', boxLabel: this.addWMSText, checked: true},
-                {name: 'source_type', inputValue: 'gxp_arcrestsource', boxLabel: this.addArcText}
+                {name: 'source_type', inputValue: 'gxp_arcrestsource', boxLabel: this.addArcText},
+                {name: 'source_type', inputValue: 'gxp_wmtssource', boxLabel: this.addWMTSText}
             ]
         });
 
